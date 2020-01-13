@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="grid-1" class="grid-item">
-      <LoginForm />
+      <DigitalClock />
     </div>
     <div id="grid-2" class="grid-item">
       <LoginForm />
@@ -31,6 +31,7 @@
 </template>
 
 <script>
+import DigitalClock  from './components/DigitalClock.vue'
 import LoginForm from './components/LoginForm.vue'
 import Quiz from './components/Quiz.vue'
 import PersonTable from './components/PersonTable.vue'
@@ -43,6 +44,7 @@ import MagicEightBall from './components/MagicEightBall.vue'
 export default {
   name: 'app',
   components: {
+    DigitalClock,
     LoginForm,
     Quiz,
     PersonTable,
@@ -56,6 +58,15 @@ export default {
 </script>
 
 <style>
+
+@font-face {
+  font-family: 'DSEG14Modern';
+  src: url('./assets/DSEG14Modern-Bold.woff2') format('woff2'),
+       url('./assets/DSEG14Modern-Bold.woff') format('woff'), 
+       url('./assets/DSEG14Modern-Bold.ttf')  format('truetype');
+}
+
+
 #app {
   display: grid;
   grid-template-rows: repeat(3, 31vh);
@@ -74,4 +85,7 @@ export default {
   background-image: linear-gradient(141deg, #b8d1c6 0%, #84eefa 50%, #78daff 80%);
   overflow: auto ;
 }
+
+/*DSEG14Modern-Bold.woff2*/
+
 </style>
