@@ -1,14 +1,75 @@
 <template>
-  <div class="grid-inside">
-    <p>
-      Quiz
-    </p>
-  </div>
+    <div class="grid-inside">
+        <p>
+            Quiz
+        </p>
+
+        <ol>
+            <li class="question" v-for="(quizItem, questionIndex) in quiz" v-bind:key="questionIndex">
+                {{ questionIndex + 1 }}. {{ quizItem.question }}
+                <div class="control columns is-desktop">
+                <div class="column is-one-third-desktop is-one-third-widescreen is-one-third-fullhd answer-options" v-for="(answer, answerIndex) in quizItem.answers" v-bind:key="answerIndex">
+                    <input type="radio" v-bind:name="'q' + questionIndex + 'radios'" v-bind:id="'q' + questionIndex + 'a' + answerIndex" v-bind:value="'q' + answerIndex + 'a' + answerIndex" v-model="picked">
+                    <label class="answer-label" v-bind:for="'q' + questionIndex + 'a' + answerIndex">{{ answer }}</label>
+                </div>
+                </div>
+            </li>
+        </ol>
+        <div class="button-container lick">
+            <button class="button is-primary" id="submit" @click="submit">Submit</button>
+        </div>
+    </div>
 </template>
 
 <script>
+
+var quiz = [
+  {
+    question: 'When the 🌑 hits your 👁️ like a big 🍕🥧, that\'s...',
+    answers: [
+      'Wtf?',
+      'Amore',
+      'An old song',
+    ],
+    correctAnswer: 1
+  },
+  {
+    question: 'A thing is moving away from you and you bouce a signal (such as sound, light or a radio signal) off it. What happens to your perception of the frequency of the singal you get back?',
+    answers: [
+      'Nothing',
+      'It gets higher',
+      'It gets lower',
+    ],
+    correctAnswer: 2
+  },
+  {
+    question: 'How many corners does a cube have?',
+    answers: [
+      '6',
+      '8',
+      '10',
+    ],
+    correctAnswer: 1
+  },
+  {
+    question: 'Whats the name of the first geezer to talk about the thing in question 2?',
+    answers: [
+      'Jay made it up',
+      'Friedrich Hasenöhrl',
+      'Christian Doppler',
+    ],
+    correctAnswer: 2
+  },
+]
+
+
 export default {
   name: 'Quiz',
+  data: function() {
+    return {
+      quiz: quiz
+    }
+  }
 }
 </script>
 
@@ -26,5 +87,23 @@ li {
 }
 a {
   color: #42b983;
+}
+
+.question {
+    margin-top: 1.5em;
+    width: 95%;
+}
+
+.answer-label {
+    padding-left: 0.7em;
+}
+
+.button-container {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.lick, button {
+  cursor: url('../assets/tongue.png'), auto; 
 }
 </style>

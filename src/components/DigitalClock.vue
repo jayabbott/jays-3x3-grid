@@ -29,11 +29,6 @@ export default {
   data: function(){
     return obj
   },
-  methods: {
-    time: function() {
-      return Date.now().toLocaleTimeString('en-GB')
-    },
-  },
   beforeMount(){
     update()
   },

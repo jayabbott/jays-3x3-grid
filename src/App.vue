@@ -66,6 +66,8 @@ export default {
        url('./assets/DSEG14Modern-Bold.ttf')  format('truetype');
 }
 
+@import "https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css";
+
 
 #app {
   display: grid;
