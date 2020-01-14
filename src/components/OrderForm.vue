@@ -3,12 +3,42 @@
     <p>
       OrderForm
     </p>
+    <table class="product-table">
+      <tr>
+        <th>Item</th>
+        <th>Price</th>
+        <th>Include</th>
+      </tr>    
+      <tr v-for="(product, productIndex) in products" v-bind:key="productIndex">
+        <td>{{ product.item }}</td>
+        <td>{{ product.price }}</td>
+        <td><input type="checkbox" v-bind:id="productIndex" v-bind:value="productIndex" v-model="checkedProducts"></td>
+      </tr>
+    </table>
   </div>
 </template>
 
 <script>
+
+let products = [
+  {item: 'Xbox', price: 200},
+  {item: 'Alarm Clock', price: 12.99},
+  {item: 'Washing Machine', price: 119.99},
+  {item: '4K Monitor', price: 350},
+  {item: 'Graphics Card', price: 100},
+  {item: 'American Fridge', price: 300},
+  {item: 'Playing Cards', price: 1.5},
+]
+
+
 export default {
   name: 'OrderForm',
+  data: function() {
+    return {
+      products: products,
+      checkedProducts: [],
+    }
+  }
 }
 </script>
 
@@ -27,4 +57,23 @@ li {
 a {
   color: #42b983;
 }
+
+.product-table {
+  margin-left: 5%;
+  width: 90%;
+}
+
+.product-table tr th {
+  width: 30%;
+}
+
+.product-table tr td {
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
 </style>
