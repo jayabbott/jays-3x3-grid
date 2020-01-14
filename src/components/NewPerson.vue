@@ -23,6 +23,27 @@
 
 <script>
 
+function personValidToAdd(person)
+{
+  if (person.firstName == '')
+  {
+    return false
+  }
+  if (person.lastName == '')
+  {
+    return false
+  }
+  if (person.age < 1)
+  {
+    return false
+  }
+  if (person.age > 150)
+  {
+    return false
+  }
+  return true
+}
+
 const blankUser =  {
   firstName: '',
   lastName: '',
@@ -42,8 +63,11 @@ export default {
   },
   methods: {
     addPerson: function() {
-      this.$emit('inputData', this.userToAdd)
-      this.userToAdd = Object.assign({}, blankUser);
+      if (personValidToAdd(this.userToAdd))
+      {
+        this.$emit('inputData', this.userToAdd)
+        this.userToAdd = Object.assign({}, blankUser);
+      }
     }
   }
 }
