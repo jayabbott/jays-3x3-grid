@@ -1,6 +1,7 @@
 <template>
   <div class="grid-inside">
     <p>This is a login form. Use it to log in...</p>
+    <form action="javascript:void(0);">
       <input v-model="inputUsername" type="text"><br>
       <input v-model="inputPassword" type="password"><br>
       <button class="button is-white" id="login" @click="login">Login</button>
@@ -9,6 +10,7 @@
         <div class="login-successful" v-if="isLoggedOn">Log-in Successful!<br>Hi, {{ loggedOnUser }}</div>
         <div v-else>Error: {{ errorOutput }}</div>
       </div>
+    </form>
   </div>
 </template>
 
