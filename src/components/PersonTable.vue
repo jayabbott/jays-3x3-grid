@@ -34,7 +34,7 @@ var people = [
     lastName: 'Abbott',
     age: 25,
   },
-  /*{
+  {
     firstName: 'Bobby',
     lastName: 'Tables',
     age: 10,
@@ -73,7 +73,7 @@ var people = [
     firstName: 'Jordan',
     lastName: 'Sanderson',
     age: 30,
-  },*/
+  },
 ]
 export default {
   name: 'PersonTable',
