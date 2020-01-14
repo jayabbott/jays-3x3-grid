@@ -34,7 +34,7 @@ var people = [
     lastName: 'Abbott',
     age: 25,
   },
-  {
+  /*{
     firstName: 'Bobby',
     lastName: 'Tables',
     age: 10,
@@ -73,7 +73,7 @@ var people = [
     firstName: 'Jordan',
     lastName: 'Sanderson',
     age: 30,
-  },
+  },*/
 ]
 export default {
   name: 'PersonTable',
@@ -82,13 +82,21 @@ export default {
       people: people
     }
   },
+  props: {
+    personToAdd: {
+      type: Object
+    }
+  },
   methods: {
     deleteEntry: function(personIndex) {
-      console.log('gonna delete ' + personIndex)
-      this.people.splice(personIndex, 1);
+      this.people.splice(personIndex, 1)
+    },
+  },
+  watch: {
+    personToAdd: function() {
+      this.people.push(this.personToAdd);
     }
   }
-
 }
 </script>
 

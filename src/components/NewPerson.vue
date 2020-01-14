@@ -1,14 +1,51 @@
 <template>
   <div class="grid-inside">
-    <p>
+    <h2>
       NewPerson
-    </p>
+    </h2>
+    <form action="javascript:void(0);">
+      <div class="form-item">
+        <label class="form-label" for="inputFirstName">First Name</label><br>
+        <input id="inputFirstName" v-model="userToAdd.firstName" type="text"><br>
+      </div>
+      <div class="form-item">
+        <label class="form-label" for="inputLastName">Last Name</label><br>
+        <input id="inputLastName" v-model="userToAdd.lastName" type="text"><br>
+      </div>
+      <div class="form-item">
+        <label class="form-label" for="inputAge">Age</label><br>
+        <input id="inputAge" v-model="userToAdd.age" type="number"><br>
+      </div>
+      <button class="button is-white" id="addPerson" @click="addPerson">Add Person</button>
+    </form>
   </div>
 </template>
 
 <script>
+
+const blankUser =  {
+  firstName: '',
+  lastName: '',
+  age: null,
+}
+
 export default {
   name: 'NewPerson',
+  data() {
+    return {
+      userToAdd: {
+        firstName: '',
+        lastName: '',
+        age: null,
+      }
+    };
+  },
+  methods: {
+    addPerson: function() {
+      this.$emit('inputData', this.userToAdd)
+      this.userToAdd = Object.assign({}, blankUser);
+    }
+  }
 }
 </script>
 
@@ -26,5 +63,13 @@ li {
 }
 a {
   color: #42b983;
+}
+
+.form-item {
+  margin-top: 0.3em;
+}
+
+button {
+  margin-top: 0.5em;
 }
 </style>

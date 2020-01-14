@@ -10,10 +10,10 @@
       <Quiz />
     </div>
     <div id="grid-4" class="grid-item">
-      <PersonTable />
+      <PersonTable :personToAdd="userPass" />
     </div>
     <div id="grid-5" class="grid-item">
-      <NewPerson />
+      <NewPerson @inputData="userAdded" />
     </div>
     <div id="grid-6" class="grid-item">
       <OrderForm />
@@ -53,6 +53,16 @@ export default {
     ProductSearch,
     ProductListOrGrid,
     MagicEightBall
+  },
+  data: function() {
+    return {
+      userPass: {}
+    };
+  },
+  methods: {
+    userAdded(variable) {
+      this.userPass = variable;
+    }
   }
 }
 </script>
