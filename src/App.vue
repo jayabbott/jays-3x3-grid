@@ -49,6 +49,8 @@ let products = [
   {item: 'Graphics Card', price: 100, image: require('./assets/product-images/graphics-card.jpg')},
   {item: 'American Fridge', price: 300, image: require('./assets/product-images/american-fridge.jpg')},
   {item: 'Playing Cards', price: 1.5, image: require('./assets/product-images/playing-cards.jpg')},
+  {item: 'Sofa', price: 449.99, image: require('./assets/product-images/sofa.jpg')},
+  {item: 'Desk Lamp', price: 49.98, image: require('./assets/product-images/desk-lamp.jpg')},
 ]
 
 export default {
