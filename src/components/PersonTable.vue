@@ -10,15 +10,13 @@
         <th>Last Name</th>
         <th>Age</th>
         <th>Delete</th>
-      </tr>
-      <!-- loop -->      
+      </tr>    
       <tr v-for="(person, personIndex) in people" v-bind:key="personIndex">
         <td>{{ person.firstName }}</td>
         <td>{{ person.lastName }}</td>
         <td>{{ person.age }}</td>
         <td><button class="button is-primary is-small" id="delete" @click="deleteEntry(personIndex)">Delete</button></td>
       </tr>
-      <!-- loop -->
     </table>
 
 
