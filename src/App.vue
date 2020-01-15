@@ -22,7 +22,7 @@
       <ProductSearch :products="products" />
     </div>
     <div id="grid-8" class="grid-item">
-      <ProductListOrGrid />
+      <ProductListOrGrid :products="products" />
     </div>
     <div id="grid-9" class="grid-item">
       <MagicEightBall />
