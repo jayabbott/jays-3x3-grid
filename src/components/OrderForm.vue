@@ -21,23 +21,16 @@
 
 <script>
 
-let products = [
-  {item: 'Xbox', price: 200},
-  {item: 'Alarm Clock', price: 12.99},
-  {item: 'Washing Machine', price: 119.99},
-  {item: '4K Monitor', price: 350},
-  {item: 'Graphics Card', price: 100},
-  {item: 'American Fridge', price: 300},
-  {item: 'Playing Cards', price: 1.5},
-]
-
-
 export default {
   name: 'OrderForm',
   data: function() {
     return {
-      products: products,
       checkedProducts: [],
+    }
+  },
+  props: {
+    products: {
+      type: Array
     }
   },
   computed: {

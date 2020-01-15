@@ -16,10 +16,10 @@
       <NewPerson @inputData="userAdded" />
     </div>
     <div id="grid-6" class="grid-item">
-      <OrderForm />
+      <OrderForm :products="products" />
     </div>
     <div id="grid-7" class="grid-item">
-      <ProductSearch />
+      <ProductSearch :products="products" />
     </div>
     <div id="grid-8" class="grid-item">
       <ProductListOrGrid />
@@ -40,6 +40,16 @@ import OrderForm from './components/OrderForm.vue'
 import ProductSearch from './components/ProductSearch.vue'
 import ProductListOrGrid from './components/ProductListOrGrid.vue'
 import MagicEightBall from './components/MagicEightBall.vue'
+//
+let products = [
+  {item: 'Xbox', price: 200, image: require('./assets/product-images/xbox.jpg')},
+  {item: 'Alarm Clock', price: 12.99, image: require('./assets/product-images/alarm-clock.jpg')},
+  {item: 'Washing Machine', price: 119.99, image: require('./assets/product-images/washing-machine.jpg')},
+  {item: '4K Monitor', price: 350, image: require('./assets/product-images/4k-monitor.jpg')},
+  {item: 'Graphics Card', price: 100, image: require('./assets/product-images/graphics-card.jpg')},
+  {item: 'American Fridge', price: 300, image: require('./assets/product-images/american-fridge.jpg')},
+  {item: 'Playing Cards', price: 1.5, image: require('./assets/product-images/playing-cards.jpg')},
+]
 
 export default {
   name: 'app',
@@ -56,7 +66,8 @@ export default {
   },
   data: function() {
     return {
-      userPass: {}
+      userPass: {},
+      products: products,
     };
   },
   methods: {

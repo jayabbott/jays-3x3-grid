@@ -37,7 +37,7 @@ var quiz = [
     chosenAnswer: null,
   },
   {
-    question: 'A thing is moving away from you and you bouce a signal (such as sound, light or a radio signal) off it. What happens to your perception of the frequency of the signal you get back?',
+    question: 'A thing is moving away from you and you bounce a signal (such as sound, light or a radio signal) off it. What happens to your perception of the frequency of the signal you get back?',
     answers: [
       'Nothing',
       'It gets higher',
