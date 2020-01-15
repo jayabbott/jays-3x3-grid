@@ -15,6 +15,7 @@
         <td><input type="checkbox" v-bind:id="productIndex" v-bind:value="productIndex" v-model="checkedProducts"></td>
       </tr>
     </table>
+    Total Price: {{ totalPrice }}
   </div>
 </template>
 
@@ -37,6 +38,15 @@ export default {
     return {
       products: products,
       checkedProducts: [],
+    }
+  },
+  computed: {
+    totalPrice: function() {
+      let sum = 0
+      for (const checkedProduct of this.checkedProducts) {
+        sum += this.products[checkedProduct].price
+      }
+      return sum
     }
   }
 }
