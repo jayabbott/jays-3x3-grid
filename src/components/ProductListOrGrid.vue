@@ -3,8 +3,7 @@
     <h2>
       ProductListOrGrid
     </h2>
-    <input type="checkbox" id="checkbox" v-model="displayGrid">
-
+    <button class="button is-primary is-small" id="toggleView" @click="displayGrid = !displayGrid">View as {{ displayGrid ? 'List' : 'Grid' }}</button>
     <table v-if="!displayGrid" class="product-table">
       <tr>
         <th>Item</th>
@@ -84,6 +83,16 @@ img {
   margin-top: 0px;
 
   margin-left: 24%;
+}
+
+#toggleView {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+
+.grid-inside {
+  position: relative;
 }
 
 </style>

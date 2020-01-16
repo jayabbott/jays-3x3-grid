@@ -40,6 +40,8 @@ function searchProduct(productName, searchTerm)
   let productStart = productName.substring(0, searchTermLength);
 
   return (productStart == searchTerm)
+
+
 }
 
 export default {
@@ -97,6 +99,6 @@ img {
 }
 
 .columns {
-  width: 98%
+  width: 98%;
 }
 </style>
