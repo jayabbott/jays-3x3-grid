@@ -17,6 +17,7 @@
         <h2>Product Search</h2>
 
         <input id="searchInput" v-model="searchString" type="text">
+        
       </div>
     </div>
     
@@ -37,7 +38,7 @@ function searchProduct(productName, searchTerm)
 
   let searchTermLength = searchTerm.length
 
-  let productStart = productName.substring(0, searchTermLength);
+  let productStart = productName.substring(0, searchTermLength)
 
   return (productStart == searchTerm)
 
