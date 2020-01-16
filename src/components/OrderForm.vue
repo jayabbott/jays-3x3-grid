@@ -3,12 +3,6 @@
     <p>
       OrderForm
     </p>
-    <div class="control columns is-desktop">
-      <div class="column is-one-third-desktop is-one-third-widescreen is-one-third-fullhd answer-options" v-for="(answer, answerIndex) in quizItem.answers" v-bind:key="answerIndex">
-          <input type="radio" v-bind:name="'q' + questionIndex + 'radios'" v-bind:id="'q' + questionIndex + 'a' + answerIndex" v-bind:value="'q' + questionIndex + 'a' + answerIndex" v-model="quizItem.chosenAnswer">
-          <label class="answer-label" v-bind:for="'q' + questionIndex + 'a' + answerIndex">{{ answer }}</label>
-      </div>
-    </div>
     <table class="product-table">
       <tr>
         <th>Item</th>
