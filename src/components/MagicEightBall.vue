@@ -39,7 +39,7 @@ export default {
   name: 'MagicEightBall',
   data: function() {
     return {
-      response: 'Shake me',
+      response: 'Click me to shake me up 😉',
       responses: responses,
     }
   },
